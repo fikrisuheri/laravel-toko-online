@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Fikri Sport &mdash; Toko Olahraga Online </title>
+    <title>TEZIR &mdash; Yoiii </title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -38,7 +38,7 @@
 
             <div class="col-12 mb-3 mb-md-0 col-md-4 order-1 order-md-2 text-center">
               <div class="site-logo">
-                <a href="index.html" class="js-logo-clone">FikriSport</a>
+                <a href="/user" class="js-logo-clone"><img src="images/tezir.png" width="150"></a>
               </div>
             </div>
 
@@ -55,7 +55,7 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                 <a class="dropdown-item" href="{{ route('user.alamat') }}">Pengaturan Alamat</a>
-                                <a class="dropdown-item" href="#">Pengaturan Akun</a>
+                                <!-- <a class="dropdown-item" href="#">Pengaturan Akun</a> -->
                                 <a class="dropdown-item" href="#">
                                 
                                 <a class="dropdown-item" href="{{ route('logout') }}"
@@ -171,7 +171,7 @@
               <ul class="list-unstyled">
                 <li class="address">Jalan sukses menuju dunia akhirat</li>
                 <li class="phone"><a href="tel://23923929210">+62 3392 3929 210</a></li>
-                <li class="email">sport@gmail.com</li>
+                <li class="email">tezir@gmail.com</li>
               </ul>
             </div>
 
@@ -190,7 +190,7 @@
           <div class="col-md-12">
             <p>
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            Copyright &copy;<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" class="text-primary">Colorlib</a>
+            Copyright &copy;<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i>  <a href="https://colorlib.com" target="_blank" class="text-primary"></a>
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
             </p>
           </div>
