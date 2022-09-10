@@ -114,7 +114,7 @@ a {
     position: absolute;
     width: 40px;
     height: 2px;
-    background: #7971ea; }
+    background: #000000; }
 
 .border-top {
   border-top: 1px solid #edf0f5 !important; }
@@ -160,6 +160,8 @@ a {
     font-size: 20px;
     padding-left: 10px;
     padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     border: 2px solid #25262a; }
     .site-navbar .site-logo a:hover {
       text-decoration: none; }
@@ -460,7 +462,7 @@ a {
       .site-blocks-cover h1 {
         font-size: 50px; } }
   .site-blocks-cover p {
-    color: #333333;
+    color: #f8f8f8;
     font-size: 20px;
     line-height: 35px; }
   .site-blocks-cover .intro-text {
@@ -482,7 +484,7 @@ a {
       display: none; }
   .site-blocks-1 .icon span {
     position: relative;
-    color: #7971ea;
+    color: #000000;
     top: -10px;
     font-size: 50px;
     display: inline-block; }
@@ -581,7 +583,7 @@ a {
   padding-left: 30px;
   position: relative;
   margin-bottom: 15px;
-  color: #25262a; }
+  color: #000000; }
   .block-5 ul li:before {
     top: 0;
     font-family: "icomoon";
@@ -590,7 +592,7 @@ a {
     left: 0;
     font-size: 20px;
     line-height: 1;
-    color: #7971ea; }
+    color: #000000; }
   .block-5 ul li.address:before {
     content: "\e8b4"; }
   .block-5 ul li.email:before {

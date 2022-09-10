@@ -117,7 +117,7 @@
 }
 
 .card-revenue {
-  background: linear-gradient(120deg, #556cdc, #128bfc, #18bef1);
+  background: linear-gradient(120deg, #000000, #64717e, #cfcfcf);
   background-size: cover;
   color: color(white);
 
@@ -245,7 +245,7 @@
     }
 
     &.purchase-button {
-      background-color: rgba(172, 50 ,228, 0.9);
+      background-color: rgba(2, 2, 2, 0.9);
       @include background-image(theme-gradient-color(primary));
       color: $white;
       border: none;
