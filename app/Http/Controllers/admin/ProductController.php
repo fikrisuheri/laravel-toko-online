@@ -7,76 +7,68 @@ use Illuminate\Http\Request;
 use App\Product;
 use App\Categories;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\DB;
+
 class ProductController extends Controller
 {
     public function index()
     {
         //membawa data produk yang di join dengan table kategori
-        $products = DB::table('products')
-                    ->join('categories', 'categories.id', '=', 'products.categories_id')
-                    ->select('products.*', 'categories.name as nama_kategori')
-                    ->get();
-        $data = array(
-            'products' => $products
-        );
-        return view('admin.product.index',$data);
+        $products = Product::join('categories', 'categories.id', '=', 'products.categories_id')
+            ->select('products.*', 'categories.name as nama_kategori')
+            ->get();
+
+        return view('admin.product.index', compact('products'));
     }
 
     public function tambah()
     {
         //menampilkan form tambah kategori
 
-        $data = array(
-            'categories' => Categories::all(),
-        );
-        return view('admin.product.tambah',$data);
+        $categories = Categories::all();
+
+        return view('admin.product.tambah', compact('categories'));
     }
 
     public function store(Request $request)
     {
-        //menyimpan produk ke database
-        if($request->file('image')){
+        if ($request->file('image')) {
             //simpan foto produk yang di upload ke direkteri public/storage/imageproduct
-            $file = $request->file('image')->store('imageproduct','public');
-            
-            Product::create([
-                'name' => $request->name,
-                'description' => $request->description,
-                'price' => $request->price,
-                'stok' => $request->stok,
-                'weigth' => $request->weigth,
-                'categories_id' => $request->categories_id,
+            $file = $request->file('image')->store('imageproduct', 'public');
 
-                'image'          => $file
+            Product::create([
+                'name'          => $request->name,
+                'description'   => $request->description,
+                'price'         => $request->price,
+                'stok'          => $request->stok,
+                'weigth'        => $request->weigth,
+                'categories_id' => $request->categories_id,
+                'image'         => $file
 
             ]);
 
-            return redirect()->route('admin.product')->with('status','Berhasil Menambah Produk Baru');
+            return redirect()->route('admin.product')->with('status', 'Berhasil Menambah Produk Baru');
         }
     }
 
-    public function edit($id)
+    public function edit(Product $id)
     {
         //menampilkan form edit
         //dan mengambil data produk sesuai id dari parameter
-        $data = array(
-            'product' => Product::findOrFail($id),
-            'categories' => Categories::all(),
-        );
-        return view('admin.product.edit',$data);
+
+        return view('admin.product.edit', [
+            'product'       => $id,
+            'categories'    => Categories::all(),
+        ]);
     }
 
-    public function update($id,Request $request)
+    public function update(Product $id, Request $request)
     {
-        //ambil data dulu sesuai parameter $Id
-        $prod = Product::findOrFail($id);
+        $prod = $id;
 
-        // Lalu update data nya ke database
-        if( $request->file('image')){
-            
-            Storage::delete('public/'.$prod->image);
-            $file = $request->file('image')->store('imageproduct','public');
+        if ($request->file('image')) {
+
+            Storage::delete('public/' . $prod->image);
+            $file = $request->file('image')->store('imageproduct', 'public');
             $prod->image = $file;
         }
 
@@ -86,19 +78,19 @@ class ProductController extends Controller
         $prod->weigth = $request->weigth;
         $prod->categories_id = $request->categories_id;
         $prod->stok = $request->stok;
-        
-        
+
+
         $prod->save();
 
-        return redirect()->route('admin.product')->with('status','Berhasil Mengubah Kategori');
+        return redirect()->route('admin.product')->with('status', 'Berhasil Mengubah Kategori');
     }
 
-    public function delete($id)
+    public function delete(Product $id)
     {
         //mengahapus produk
-        $prod = Product::findOrFail($id);
-        Product::destroy($id);
-        Storage::delete('public/'.$prod->image);
-        return redirect()->route('admin.product')->with('status','Berhasil Mengahapus Produk');
+        Storage::delete('public/' . $id->image);
+        $id->delete();
+
+        return redirect()->route('admin.product')->with('status', 'Berhasil Mengahapus Produk');
     }
 }
