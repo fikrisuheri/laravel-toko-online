@@ -13,12 +13,15 @@ class LocationsTableSeeder extends Seeder
      */
     public function run()
     {
+        printf("Mengambil data Provinsi dari Raja Ongkir\n");
         $daftarProvinsi = RajaOngkir::provinsi()->all();
         foreach ($daftarProvinsi as $provinceRow) {
             Province::create([
                 'province_id' => $provinceRow['province_id'],
                 'title' => $provinceRow['province']
             ]);
+
+            printf("Mengambil data kota berdasarkan provinsi: %s\n", $provinceRow['province']);
             $daftarKota = RajaOngkir::kota()->dariProvinsi($provinceRow['province_id'])->get();
             foreach ($daftarKota as $cityRow) {
                 City::create([

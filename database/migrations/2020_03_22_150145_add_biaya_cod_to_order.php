@@ -14,7 +14,7 @@ class AddBiayaCodToOrder extends Migration
     public function up()
     {
         Schema::table('order', function (Blueprint $table) {
-            $table->integer('biaya_cod');
+            $table->integer('biaya_cod')->default(0);
         });
     }
 

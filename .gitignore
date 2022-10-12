@@ -3,6 +3,8 @@
 /public/storage
 /storage/*.key
 /vendor
+.vscode
+.idea
 .env
 .env.backup
 .phpunit.result.cache

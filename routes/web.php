@@ -1,7 +1,4 @@
 <?php
-
-use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,6 +9,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
+
 Auth::routes();
 Route::get('/','user\WelcomeController@index')->name('home');
 Route::get('/home','user\WelcomeController@index')->name('home2');
@@ -90,12 +91,3 @@ Route::group(['middleware' => ['auth','checkRole:customer']],function(){
 
 Route::get('/ongkir', 'OngkirController@index');
 Route::get('/ongkir/province/{id}/cities', 'OngkirController@getCities');
-// Route::get('/submit', 'OngkirController@submit')->name('home');
-
-// Auth::routes();
-
-// Route::get('/home', 'HomeController@index')->name('home');
-
-// Auth::routes();
-
-// Route::get('/home', 'HomeController@index')->name('home');

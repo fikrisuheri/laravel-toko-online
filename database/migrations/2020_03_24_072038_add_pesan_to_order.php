@@ -14,7 +14,7 @@ class AddPesanToOrder extends Migration
     public function up()
     {
         Schema::table('order', function (Blueprint $table) {
-            $table->text('pesan')->nullable;
+            $table->text('pesan')->nullable();
         });
     }
 
