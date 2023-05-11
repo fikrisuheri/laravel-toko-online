@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Fikri Sport &mdash; Toko Olahraga Online </title>
+    <title>TACELAK CLOTHS</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -38,7 +38,7 @@
 
             <div class="col-12 mb-3 mb-md-0 col-md-4 order-1 order-md-2 text-center">
               <div class="site-logo">
-                <a href="index.html" class="js-logo-clone">FikriSport</a>
+                <a href="index.html" class="js-logo-clone">tacelak</a>
               </div>
             </div>
 

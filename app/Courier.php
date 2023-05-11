@@ -6,9 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Courier extends Model
 {
-    //
-    protected $table = 'couriers';
-    protected $fillable = [
-        'code', 'title'
-    ];
+	//
+	protected $table = 'couriers';
+	protected $fillable = [
+		'code', 'title'
+	];
 }
