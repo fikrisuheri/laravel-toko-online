@@ -18,4 +18,13 @@ use Illuminate\Support\Facades\Route;
  * create api endpoint for login
  */
 Route::post('login', 'Api\AuthController@login');
+
+/**
+ * create api endpoint for register
+ */
+Route::post('register', 'Api\AuthController@register');
+
+/**
+ * create api endpoint for logout
+ */
 Route::middleware('mobile')->get('logout', 'Api\AuthController@logout');
