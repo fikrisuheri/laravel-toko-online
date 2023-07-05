@@ -22,10 +22,6 @@ Route::get('/produk/cari','user\ProdukController@cari')->name('user.produk.cari'
 Route::get('/kategori/{id}','KategoriController@produkByKategori')->name('user.kategori');
 Route::get('/produk/{id}','user\ProdukController@detail')->name('user.produk.detail');
 
-Route::get('/pelanggan',function(){
-    return 'Pelanggan';
-});
-
 Route::group(['middleware' => ['auth','checkRole:admin']],function(){    
     Route::get('/admin','DashboardController@index')->name('admin.dashboard');
     Route::get('/pengaturan/alamat','admin\PengaturanController@aturalamat')->name('admin.pengaturan.alamat');

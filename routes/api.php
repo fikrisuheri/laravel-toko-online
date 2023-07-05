@@ -14,10 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
-
 /**
- * create api based on route web
+ * create api endpoint for login
  */
+Route::post('login', 'Api\AuthController@login');
+Route::middleware('mobile')->get('logout', 'Api\AuthController@logout');
