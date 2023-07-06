@@ -19,6 +19,11 @@
 		<link rel="shortcut icon" href="{{ asset('adminassets') }}/assets/images/favicon.png" />
 		<link href="{{ asset('table/datatables/dataTables.bootstrap4.min.css') }}" rel="stylesheet">
 
+		<style>
+			.collapse{
+				visibility: inherit !important;
+			}
+		</style>
 		<script src="https://cdn.tailwindcss.com"></script>
 	</head>
 	<body>
